@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ngFlashCard Sample</title>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="../dist/ngFlashCard.js"></script>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../dist/ngFlashCard.min.css"/>
+    <script>
+        angular.module("testModule",['ngFlashCard', 'ngSanitize']).run(['$rootScope',function($rootScope){
+            $rootScope.exampleCardGroups =[
+                {name: "Chapter 2", cards: [
+                    {back: "money", front:"お<ruby>金<rp>（</rp><rt>かね</rt><rp>）</rp></ruby>"},
+                    {back: "souvenir", front:"<ruby>土産<rp>（</rp><rt>みやげ</rt><rp>）</rp></ruby>"},
+                    {back: "hot spring", front:"<ruby>温<rp>（</rp><rt>おん</rt><rp>）</rp></ruby><ruby>泉<rp>（</rp><rt>せん</rt><rp>）</rp></ruby>"},
+                    {back: "overseas", front:"<ruby>海<rp>（</rp><rt>かい</rt><rp>）</rp></ruby><ruby>外<rp>（</rp><rt>がい</rt><rp>）</rp></ruby>"}
+                ]},
+                {name: "Chapter 5", cards: [
+                    {back: "guidebook", front:"ガイドブック"},
+                    {back: "ticket", front:'<div lang="ja" dir="ltr" ng-non-bindable="" id="conversion"><span style="display:none" class="markup">切符｛きっ｜ぷ｝</span><ruby>切<rp>（</rp><rt>きっ</rt><rp>）</rp></ruby><ruby>符<rp>（</rp><rt>ぷ</rt><rp>）</rp></ruby></div>'},
+                    {back: "customer", front:'<div lang="ja" dir="ltr" ng-non-bindable="" id="conversion"><span style="display:none" class="markup">客｛きゃく｝</span><ruby>客<rp>（</rp><rt>きゃく</rt><rp>）</rp></ruby></div>'},
+                    {back: "airport", front:'<div lang="ja" dir="ltr" ng-non-bindable="" id="conversion"><span style="display:none" class="markup">空港｛くう｜こう｝</span><ruby>空<rp>（</rp><rt>くう</rt><rp>）</rp></ruby><ruby>港<rp>（</rp><rt>こう</rt><rp>）</rp></ruby></div>'}
+                ]}
+            ];
+        }]);
+    </script>
+</head>
+<body ng-app="testModule" >
+   <div class="text-center " flash-card-set card-groups="exampleCardGroups" style="padding:15px"></div>
+</body>
+</html>
