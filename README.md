@@ -1,4 +1,4 @@
-# ng-flash-card
+# angular flashcard
 This is an application that will give you web based flash cards using angularjs.
 This application also relies on bootstrap css, so be sure to include that in your project.
 
